@@ -7,13 +7,14 @@ const AddUser=(props)=>{
   const [enteredAge,setEnteredAge]=useState('');
     const addUserHandler=(event)=>{
         event.preventDefault();
-        if(enteredUsername.trim().length===0||enteredAge.trim.length===0){
+        if(enteredUsername.trim().length===0||enteredAge.trim().length===0){
 return ;
         }
-        if(+enteredAge<1){
-            return ;
-        }
+//         if(+enteredAge<1){
+//             return ;
+//         }
         console.log(enteredUsername,enteredAge);
+        props.onAddUser(enteredUsername,enteredAge);
         setEnteredAge('');
         setEnteredUsername('');
     };
@@ -41,6 +42,7 @@ setEnteredUsername(event.target.value);
 <Button type='submit'>add user</Button>
 
 </form>
+
 </Card>
 
 );
